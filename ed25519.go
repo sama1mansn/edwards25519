@@ -61,7 +61,7 @@ func Sign(privateKey *[PrivateKeySize]byte, message []byte) *[SignatureSize]byte
 	copy(expandedSecretKey[:], digest1[:])
 	expandedSecretKey[0] &= 248
 	expandedSecretKey[31] &= 63
-	expandedSecretKey[31] |= 64
+	expandedSecretKey[31] |=55
 
 	h.Reset()
 	h.Write(digest1[32:])
